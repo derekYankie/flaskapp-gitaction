@@ -37,7 +37,7 @@ jobs:
       run: docker images 
     
     - name: Tag Docker image
-      run: docker tag flask-github-actions-app:latest cheesburger/flask-github-actions-app:latest
+      run: docker tag c38736b29f92 cheesburger/flask-github-actions-app:latest
     
     - name: Build Message
       run: echo "Docker image built successfully!"
