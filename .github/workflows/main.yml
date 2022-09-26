@@ -1,10 +1,20 @@
+# Assignment: CI / CD: Flask webapp with Docker & GitHub Actions
+# Date: 09/21/2022
+# "Hey Siri, play September by Earth, Wind & Fire"
+# Author: derekYankie
+
+# This workflow will publish a Flask webapp as an image to Docker Hub
+# Using Github Actions
 name: Push the Flask Webapp Docker image
 
+# Track changes on main branch
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  
+  # Uncomment this to track PR's
+  # pull_request:
+  #   branches: [ main ]
 
 jobs:
 
@@ -21,7 +31,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build Docker image
-      run: docker build . --file Dockerfile --tag cheesburger/flask-github-actions-app
+      run: docker build . --file Dockerfile --tag cheesburger/flask-github-actions:01
     
     - name: Build Message
       run: echo "Docker image built successfully!"
