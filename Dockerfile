@@ -1,3 +1,8 @@
+# Assignment: CI / CD: Flask webapp with Docker & GitHub Actions
+# Date: 09/21/2022
+# "Hey Siri, play September by Earth, Wind & Fire"
+# Author: derekYankie
+
 # start by pulling the python image
 FROM python:2.7-alpine
 
