@@ -31,7 +31,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build Docker image
-      run: docker build . --file Dockerfile --tag cheesburger/flask-github-actions:01
+      run: docker build . --file Dockerfile --tag cheesburger/flask-github-actions
     
     - name: Build Message
       run: echo "Docker image built successfully!"
