@@ -3,8 +3,8 @@
 # "Hey Siri, play September by Earth, Wind & Fire"
 # Author: derekYankie
 
-# start by pulling the python image
-FROM python:2.7-alpine
+# create image from python repo
+FROM python:3.10.4-alpine3.16
 
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
@@ -19,4 +19,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 # configure the container to run flask server
-CMD flask run --host=0.0.0.0 --port=5000
+CMD ["python","-m","flask","run", "--host=0.0.0.0 --port=5000"]
