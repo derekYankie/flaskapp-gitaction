@@ -1,4 +1,4 @@
-# Assignment: CI / CD: Flask webapp with Docker & GitHub Actions
+# Assignment: CI / CD - Flask webapp with Docker & GitHub Actions
 # Date: 09/21/2022
 # "Hey Siri, play September by Earth, Wind & Fire"
 # Author: derekYankie
@@ -22,6 +22,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v3
     - name: Log in to Docker Hub

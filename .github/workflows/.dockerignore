@@ -1,0 +1,13 @@
+# Ignore logs directory
+logs/
+
+# Ignore password file
+passwords.txt
+
+# Ignore git and cache
+.git
+.cache
+
+# Ignore markdown and class files
+*.md
+**/*.class
