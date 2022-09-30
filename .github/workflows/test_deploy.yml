@@ -1,5 +1,13 @@
+# This workflow will publish a Flask webapp as an image to Docker Hub
+# Using Github Actions
+name: Push the Flask Webapp to Docker Hub
+
+# Track changes on main branch
+on:# This workflow will publish a Flask webapp as an image to Docker Hub
+# Using Github Actions
 name: Test and deploy Flask
 
+# Track changes on main branch
 on:
   push:
     branches: [main]
