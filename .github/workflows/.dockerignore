@@ -10,4 +10,4 @@ passwords.txt
 
 # Ignore markdown and class files
 *.md
-**/*.class
+**/*.classs
