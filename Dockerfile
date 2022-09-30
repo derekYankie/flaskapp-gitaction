@@ -9,7 +9,7 @@ FROM python:3.10.4-alpine3.16
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
-# switch working directory
+# set working directory
 WORKDIR /app
 
 # install the dependencies and packages in the requirements file
