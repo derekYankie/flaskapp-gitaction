@@ -10,7 +10,7 @@ import unittest
 class TestApp(unittest.TestCase):
     # Unit tests defined for app.py
     def test_hello(self):
-        response = self.client.get('/')
+        response = self.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_return_backwards_string(self):
