@@ -9,10 +9,9 @@ import unittest
 
 class TestApp(unittest.TestCase):
     # Unit tests defined for app.py
-    def test_hello():
-        response = app.test_client().get('/')
-        assert response.status_code == 200
-        assert response.data == b'Hello, World!'
+    def test_hello(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
 
     def test_return_backwards_string(self):
     # Test return backwards simple string
