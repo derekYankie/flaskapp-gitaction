@@ -9,12 +9,6 @@ import unittest
 from app import app
 
 class TestApp(unittest.TestCase):
-
-    def setUp(self):
-        # Every test needs a client.
-        self.client = Client()
-        Men.objects.create('''whatever attributes here''')
-        # and so on. for each prerequisite that should be there in db
         
     def setUp(self):
         app.config['TESTING'] = True
@@ -22,7 +16,7 @@ class TestApp(unittest.TestCase):
         app.config['DEBUG'] = False
         self.app = app.test_client()
         self.assertEqual(app.debug, False)
-        #self.objects.create('''whatever attributes here''')
+        # self.objects.create('''whatever attributes here''')
 
     def tearDown(self):
         pass
