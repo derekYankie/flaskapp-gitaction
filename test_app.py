@@ -9,18 +9,27 @@ import unittest
 from app import app
 
 class TestApp(unittest.TestCase):
+
+    def setUp(self):
+        # Every test needs a client.
+        self.client = Client()
+        Men.objects.create('''whatever attributes here''')
+        # and so on. for each prerequisite that should be there in db
+        
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
         app.config['DEBUG'] = False
         self.app = app.test_client()
         self.assertEqual(app.debug, False)
+        #self.objects.create('''whatever attributes here''')
 
     def tearDown(self):
         pass
 
     def test_main_page(self):
-        response = self.app.post('/', follow_redirects=True)
+        response = self.app.get('/',follow_redirects=True)
+        print("code:",response.status_code)
         self.assertEqual(response.status_code, 200)
 
 
