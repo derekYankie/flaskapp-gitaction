@@ -4,17 +4,18 @@
 # Author: derekYankie
 
 from app import returnBackwardsString
+from app import hello_world
 import unittest
 
 class TestApp(unittest.TestCase):
     # Unit tests defined for app.py
-
-    def test_home_page_loads(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
+    def test_hello():
+        response = app.test_client().get('/')
+        assert response.status_code == 200
+        assert response.data == b'Hello, World!'
 
     def test_return_backwards_string(self):
-        """Test return backwards simple string"""
+    # Test return backwards simple string
         random_string = "This is my test string"
         random_string_reversed = "gnirts tset ym si sihT"
         self.assertEqual(random_string_reversed, returnBackwardsString(random_string))
