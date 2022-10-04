@@ -26,18 +26,6 @@ class TestApp(unittest.TestCase):
         print("code:",response.status_code)
         self.assertEqual(response.status_code, 200)
 
-
-
-    # # Unit tests defined for app.py
-    # def test_hello(self):
-    #     # Use Flask's test client for our test.
-    #     self.test_app = app.test_client()
-    #     # Make a test request to the Flask app
-    #     response = self.test_app.post('/')
-    #     # Assert response is 200 OK.
-    #     self.assertEquals(response.status_code, "200 OK")
-    #     self.app.post('/',follow_redirects=True)
-
     def test_return_backwards_string(self):
     # Test return backwards simple string
         random_string = "This is my test string"
