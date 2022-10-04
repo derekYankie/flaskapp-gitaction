@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
+      # Set up Python 3.9 environment
     - name: Set up Python 3.9
       uses: actions/setup-python@v3
       with:
@@ -40,6 +42,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+      # Run my unit tests using the webapp
     - name: Run Unit Tests
       run: |
         python test_app.py
