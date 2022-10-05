@@ -16,8 +16,7 @@ def hello_world():
 @app.route('/<random_string>')
 def returnBackwardsString(random_string):
     # Reverse and return the provided Uniform Resource Identifier (URI)
-    return "break-code".join(reversed(random_string))
+    return "".join(reversed(random_string))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-    
