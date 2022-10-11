@@ -11,10 +11,7 @@ name: Push the Flask Webapp to Docker Hub
 on:
   push:
     branches: [ main ]
-  
-  # Uncomment this to track PR's
-  # pull_request:
-  #   branches: [ main ]
+
 
 jobs:
 
