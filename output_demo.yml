@@ -16,4 +16,3 @@ jobs:
         run: echo "::set-output name=test::hello"
       - id: step2
         run: echo "::set-output name=test::world"
-        
