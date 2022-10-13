@@ -18,12 +18,14 @@ jobs:
         run: echo "::set-output name=test::hello"
       - id: step2
         run: echo "::set-output name=test::world"
+        # A bash variable that gets passed to the output
       - id: step3
         run: |
           tagvar=test12345
           echo "::set-output name=tagname::$tagvar"
   job2:
       runs-on: ubuntu-latest
+      # Pass outputs from job1 (above)
       needs: job1
       steps:
-        - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+        - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}} ${{needs.job1.outputs.output3}}
