@@ -23,11 +23,11 @@ jobs:
         id: contents
         run: |
           python create_txt_file.py
-          contents=$ ( cat readme.txt )
+          contents=$( cat readme.txt )
           echo "::set-output name=data::$contents"
   job2:
     runs-on: ubuntu-latest
     # Pass outputs from job1 (above)
     needs: job1
     steps:
-      - run: echo ${{needs.job1.outputs.output1}}
+      - run: echo "${{needs.job1.outputs.output1}}"
