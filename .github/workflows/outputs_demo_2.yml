@@ -23,10 +23,8 @@ jobs:
         id: contents
         run: |
           python create_txt_file.py
-          value=`cat readme.txt`
+          value="$(cat readme.txt)"
           echo "$value"
-          og_contents=$( cat readme.txt )
-          contents= $( cat readme.txt )
           echo "::set-output name=data::$value"
   job2:
     runs-on: ubuntu-latest
