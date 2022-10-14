@@ -1,3 +1,12 @@
+# Assignment: CI / CD - Flask webapp with Docker & GitHub Actions
+# Date: 10/14/2022
+# Author: derekYankie
+
+# This GitHub action will execute a Python script in job1
+# that will write some data to a file.
+# Then I'll take that data and store that info into bash variable  
+# With "outputs", I can pass data from job1 to job2.
+
 name: outputs_demo_2
 
 on:
@@ -12,23 +21,22 @@ jobs:
       
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.5.0
       
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4.3.0
         with:
-          # Exact version
+          # Set Python version to 3.9
           python-version: '3.9'
       - name: Run python script
         id: contents
         run: |
           python create_txt_file.py
-          value="$(cat readme.txt)"
-          echo "$value"
-          echo "::set-output name=data::$value"
+          results="$(cat job1.txt)"
+          echo "::set-output name=data::$results"
   job2:
     runs-on: ubuntu-latest
-    # Pass outputs from job1 (above)
+    # Pass outputs from job1
     needs: job1
     steps:
       - run: echo ${{needs.job1.outputs.output1}}
