@@ -39,4 +39,7 @@ jobs:
     # Pass outputs from job1
     needs: job1
     steps:
-      - run: echo ${{needs.job1.outputs.output1}}
+      - run: | 
+          echo ${{needs.job1.outputs.output1}}
+          number_of_words= echo ${{needs.job1.outputs.output1}} | wc -w
+          echo ${#number_of_words[@]}
