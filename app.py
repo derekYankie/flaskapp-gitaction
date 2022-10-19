@@ -9,8 +9,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-item = 
-
 @app.route('/')
 def hello_world():
     return 'Whale, hello there!\nYou have Flask in a Docker container! :)'
@@ -22,4 +20,3 @@ def returnBackwardsString(random_string):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-    
