@@ -9,6 +9,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
+item = 
+
 @app.route('/')
 def hello_world():
     return 'Whale, hello there!\nYou have Flask in a Docker container! :)'
