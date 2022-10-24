@@ -9,8 +9,7 @@ name: Push the Flask Webapp to Docker Hub
 
 # Track changes on main branch
 on:
-  push:
-    - push
+  - push
 
 
 jobs:
