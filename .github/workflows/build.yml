@@ -7,20 +7,24 @@
 # Using Github Actions
 name: Push the Flask Webapp to Docker Hub
 
-# Track changes on main branch
+# Track changes and build a new image 
+# when changes are committed to the repo
 on:
-  push:
-    branches: [ main ]
+  - push
 
 
 jobs:
 
   build:
+    name: CI Build
 
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: CI Message
+      run: echo "Preparing build!"
+      
     - uses: actions/checkout@v3
     - name: Log in to Docker Hub
       env:
