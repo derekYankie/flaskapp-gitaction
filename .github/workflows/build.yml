@@ -13,8 +13,6 @@ on:
 
 
 jobs:
-  ci-message:
-  name: CI Build
 
   build:
 
@@ -24,7 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Log in to Docker Hub
-      run: echo "Preparing build!"
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
