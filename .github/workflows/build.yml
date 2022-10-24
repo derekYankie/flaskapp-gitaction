@@ -10,10 +10,12 @@ name: Push the Flask Webapp to Docker Hub
 # Track changes on main branch
 on:
   push:
-    branches: [ main ]
+    - push
 
 
 jobs:
+  ci-message:
+  name: Build
 
   build:
 
@@ -23,6 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Log in to Docker Hub
+      run: echo "Preparing build!"
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
