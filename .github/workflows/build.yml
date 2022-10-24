@@ -14,7 +14,7 @@ on:
 
 jobs:
   ci-message:
-  name: Build
+  name: CI Build
 
   build:
 
