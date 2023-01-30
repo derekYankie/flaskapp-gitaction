@@ -45,6 +45,7 @@ jobs:
       run: docker push ${{ secrets.DOCKER_USERNAME }}/flask-github-actions-app:v2
 
   display:
+    name: Label 🏷 
     runs-on: ubuntu-latest
     needs: build
     
