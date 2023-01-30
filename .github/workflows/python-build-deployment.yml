@@ -56,7 +56,7 @@ jobs:
     steps:
     - name: Checkout 🛎️
       run: echo "Preparing list!"
-    - uses: actions/checkout@v3
+    - uses: derekYanke/flaskapp-gitaction/.github/workflows/python-build-deployment.yml@v1
 
     - name: List images 📝
       run: docker images
