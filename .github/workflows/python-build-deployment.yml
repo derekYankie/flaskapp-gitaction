@@ -10,10 +10,7 @@ name: Python Build Deployment
 # Track changes and build a new image 
 # when changes are committed to the repo
 on:
-  push:
-    branches: [main]
-
-  workflow_dispatch:
+  - push
 
 
 jobs:
