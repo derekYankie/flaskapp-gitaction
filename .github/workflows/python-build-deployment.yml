@@ -51,7 +51,3 @@ jobs:
     steps:
     - name: List images 📝
       run: docker images
-  
-  tag:
-    runs-on: ubuntu-latest
-    needs: [build,display]
