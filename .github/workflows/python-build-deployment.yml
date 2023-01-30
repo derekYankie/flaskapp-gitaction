@@ -54,8 +54,12 @@ jobs:
     
     # steps for job-2
     steps:
+    - uses: actions/checkout@v3
+    
     - name: Checkout 🛎️
       run: echo "Preparing list!"
+      
+    - name: Get images
     - uses: ./flaskapp-gitaction/.github/workflows/python-build-deployment.yml
 
     - name: List images 📝
