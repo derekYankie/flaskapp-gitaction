@@ -65,14 +65,15 @@ jobs:
 
   # job-3
   tag:
-    name: Install Python 🐍 # label for job-2
+    name: Install Python 🐍 # label for job-3
     runs-on: ubuntu-latest
     needs: [build,display] # dependency 
     
     # steps for job-3
     steps:
+    - uses: actions/checkout@v3
     - name: Install Python 🧰
-    - uses: actions/setup-python@v3
+      uses: actions/setup-python@v3
       with:
         python-version: '3.8'
     
