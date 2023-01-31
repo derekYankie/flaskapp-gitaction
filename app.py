@@ -21,7 +21,8 @@ def returnBackwardsString(random_string):
 
 @app.route("/shutdown")
 def shutdown():
-    subprocess.run("shutdown -h 0", shell=True, check=True)
+    # shutdown server after 1 minute
+    subprocess.run("shutdown -h 1", shell=True, check=True)
     return "Shutting down!"
 
 if __name__ == '__main__':
