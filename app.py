@@ -6,6 +6,7 @@
 # Author: derekYankie
 
 from flask import Flask
+import subprocess
 
 app = Flask(__name__)
 
@@ -17,6 +18,12 @@ def hello_world():
 def returnBackwardsString(random_string):
     # Reverse and return the provided Uniform Resource Identifier (URI)
     return "".join(reversed(random_string))
+
+@app.route("/shutdown")
+def shutdown():
+    # shutdown server after 1 minute
+    subprocess.run("shutdown -h 1", shell=True, check=True)
+    return "Shutting down!"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
