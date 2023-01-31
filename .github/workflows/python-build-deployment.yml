@@ -18,7 +18,6 @@ jobs:
   files:
     name: Project files 📂 # label for job-1
     runs-on: ubuntu-latest
-    needs: build # dependency 
     
     # steps for job-2
     steps:
