@@ -97,7 +97,7 @@ jobs:
         python test_app.py
 
   # job-4
-  test:
+  deploy:
     name: Deploy App to Docker 🚀 # label for job-4
     runs-on: ubuntu-latest
     needs: [files,build,test]
